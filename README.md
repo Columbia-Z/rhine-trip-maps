@@ -1,5 +1,7 @@
 # 莱茵两城行程地图
 
+简体中文 | [English](README.en.md)
+
 公开的杜塞尔多夫、科隆互动地图，使用本地 Leaflet 库、Flask 和 Gunicorn，
 部署目标为 **Azure App Service（Linux）**，不是 Static Web Apps。无需 Node.js 或前端构建。
 
