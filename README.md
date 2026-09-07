@@ -101,6 +101,16 @@ subject 为 `repo:Columbia-Z/rhine-trip-maps:ref:refs/heads/main`。
 此工作流没有配置 GitHub environment；若日后添加 environment，必须同步调整联合身份
 subject。无需 publish profile、客户端密钥或用户交互登录，不要将它们提交到仓库。
 
+## 费用与停止计费
+
+Central US 的 Linux B1 单实例公开按需价格为 **USD 0.018/小时**，
+按每月 730 小时估算约 **USD 13.14**，流量、税费等另计。此金额仅为估算，
+实际费用以 Azure 当前价格和账单为准，**不表示已核实订阅的 credit 余额**。
+
+**仅停止 WebApp 不会停止 App Service Plan 计费。** 不再使用时，应由用户自行确认
+资源及依赖均不再需要后，删除专用 App Service Plan 或整个专用资源组；
+删除资源组也会删除其中其他资源。本仓库和部署工作流不会自动执行这些删除操作。
+
 ## 部署流程
 
 `.github/workflows/azure.yml` 在 PR、main push 和手动运行时执行 Python 3.11/3.12 测试。
