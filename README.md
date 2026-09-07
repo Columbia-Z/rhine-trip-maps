@@ -74,7 +74,7 @@ Python/zlib 版本间逐字节重现。测试检查归档与公开文件一致�
 
 | 项目 | 要求 |
 | --- | --- |
-| 服务 | Azure App Service，Linux，B1，North Europe |
+| 服务 | Azure App Service，Linux，B1，Central US |
 | Python 运行时 | `PYTHON\|3.12` |
 | 启动命令 | `gunicorn --bind=0.0.0.0:8000 --timeout 120 app:app` |
 | 应用设置 | `SCM_DO_BUILD_DURING_DEPLOYMENT=true` |
