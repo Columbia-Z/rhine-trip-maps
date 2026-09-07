@@ -102,7 +102,11 @@ GitHub 仓库 **Settings → Secrets and variables → Actions → Variables** �
 管理员应为部署身份设置目标应用所需的最小部署权限及 GitHub OIDC 联合身份：
 issuer 为 `https://token.actions.githubusercontent.com`，
 audience 为 `api://AzureADTokenExchange`，
-subject 为 `repo:Columbia-Z/rhine-trip-maps:ref:refs/heads/main`。
+本站当前 subject 为
+`repo:Columbia-Z@173833594/rhine-trip-maps@1360641122:ref:refs/heads/main`。
+GitHub 实际签发的 subject 包含账户和仓库的不可变 ID。配置时应精确匹配
+`azure/login` 日志中的 `subject claim`，不能直接套用不含 ID 的旧格式；
+复制到其他仓库时，也必须使用该仓库实际签发的值。
 此工作流没有配置 GitHub environment；若日后添加 environment，必须同步调整联合身份
 subject。无需 publish profile、客户端密钥或用户交互登录，不要将它们提交到仓库。
 
