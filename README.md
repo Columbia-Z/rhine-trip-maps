@@ -3,6 +3,11 @@
 公开的杜塞尔多夫、科隆互动地图，使用本地 Leaflet 库、Flask 和 Gunicorn，
 部署目标为 **Azure App Service（Linux）**，不是 Static Web Apps。无需 Node.js 或前端构建。
 
+**部署地址**：[主站](https://rhine-trip-maps-columbia-z.azurewebsites.net/) ·
+[杜塞尔多夫](https://rhine-trip-maps-columbia-z.azurewebsites.net/dusseldorf.html) ·
+[科隆](https://rhine-trip-maps-columbia-z.azurewebsites.net/cologne.html)。
+以上为目标访问地址，实际可用性取决于发布状态。
+
 访问 `/` 会转到 `/dusseldorf.html`；另一页为 `/cologne.html`。
 保留旗标地点、日期筛选、步行道路几何、公共交通示意线、导航链接、预算和来源说明。
 页面右上角可下载 `/trip-maps.zip`，解压后直接打开任一城市 HTML。
