@@ -1,0 +1,96 @@
+:root {
+  color-scheme: light;
+  --ink: #202b3a;
+  --muted: #586579;
+  --line: #d9e0e8;
+  --panel: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+  color: var(--ink);
+  background: #f4f6f9;
+}
+a { color: #235eb0; text-underline-offset: 2px; }
+button, .button {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 11px;
+  background: white;
+  color: var(--ink);
+}
+button:hover, .button:hover { background: #eef3f9; }
+button:focus-visible, a:focus-visible { outline: 3px solid #479de6; outline-offset: 2px; }
+button[aria-pressed="true"] { background: var(--day-color, #243c5b); border-color: var(--day-color, #243c5b); color: white; }
+header { padding: 16px 20px 12px; background: var(--panel); border-bottom: 1px solid var(--line); }
+.heading-row { display: flex; align-items: start; justify-content: space-between; gap: 16px; }
+h1 { margin: 0; font-size: 23px; letter-spacing: -.4px; }
+.subtitle { color: var(--muted); font-size: 12px; margin-top: 4px; }
+.city-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: end; }
+.button { text-decoration: none; display: inline-block; white-space: nowrap; font-size: 12px; }
+.city-links .current { color: white; background: #243c5b; border-color: #243c5b; }
+#toolbar { padding: 10px 20px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; background: #fff; border-bottom: 1px solid var(--line); }
+.toolbar-divider { width: 1px; align-self: stretch; background: var(--line); margin: 0 4px; }
+.mode-legend { margin-left: auto; color: var(--muted); font-size: 12px; }
+main { display: grid; grid-template-columns: minmax(0, 1fr) 355px; height: calc(100dvh - 144px); min-height: 560px; }
+#map { min-height: 500px; width: 100%; background: #eaf0f1; }
+#details { overflow: auto; padding: 16px; border-left: 1px solid var(--line); background: #f8fafc; }
+.summary, .info-box, .route-card, .day-heading, .sources { background: white; border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin-bottom: 12px; }
+.summary h2, .info-box h2 { font-size: 16px; margin: 0 0 8px; }
+.budget-line { display: flex; gap: 10px; justify-content: space-between; margin: 7px 0; font-size: 12px; }
+.budget-line strong { white-space: nowrap; }
+.budget-total { padding-top: 8px; border-top: 1px solid var(--line); font-size: 15px; }
+.note { color: var(--muted); font-size: 12px; margin: 7px 0 0; }
+.notice { border-color: #ddbd75; background: #fffaf0; }
+.day-heading { border-left: 5px solid var(--day-color); padding: 10px 12px; }
+.day-heading h2 { font-size: 15px; margin: 0; }
+.day-heading p { margin: 3px 0 0; font-size: 12px; color: var(--muted); }
+.route-card { padding: 11px 12px; border-left: 3px solid var(--day-color); }
+.route-top { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; font-weight: 600; color: var(--day-color); }
+.route-names { margin: 6px 0; font-size: 13px; font-weight: 600; }
+.route-mode { font-size: 12px; }
+.route-actions { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+.route-actions a, .route-actions button { font-size: 11px; padding: 3px 7px; }
+.sources h2 { font-size: 14px; margin: 0 0 5px; }
+.sources a { display: block; font-size: 11px; margin: 6px 0; }
+.flag-shell { background: none; border: 0; }
+.flag-pin { white-space: nowrap; display: inline-flex; align-items: center; filter: drop-shadow(0 1px 2px #ffffff); }
+.flag-emoji { font-size: 27px; line-height: 32px; }
+.flag-number { background: var(--pin-color, #364359); border: 2px solid white; color: white; border-radius: 11px; font-size: 10px; font-weight: 800; min-width: 20px; padding: 0 4px; margin-left: -4px; }
+.flag-hotel .flag-number { background: #64748b; }
+.leaflet-tooltip.poi-label { background: #fffffff0; border: 0; box-shadow: 0 1px 4px #0002; font: 11px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; padding: 3px 6px; color: #253246; }
+.leaflet-tooltip.route-label { background: #ffffffed; border: 1px solid var(--route-color); box-shadow: 0 1px 3px #0002; color: #273549; font-size: 10px; padding: 3px 5px; border-radius: 6px; }
+.leaflet-tooltip.route-label::before { display: none; }
+.direction-icon { background: none; border: none; font-size: 16px; text-shadow: 0 0 3px white; }
+.direction-icon span { display: block; transform-origin: center; }
+.leaflet-popup-content { margin: 12px 14px; min-width: 210px; max-width: 310px; font: 12px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.leaflet-popup-content h3 { font-size: 15px; margin: 0 0 6px; }
+.popup-stops { margin-top: 8px; border-top: 1px solid var(--line); padding-top: 5px; }
+.popup-stops div { margin-top: 5px; }
+.popup-day { color: var(--day-color); font-weight: 600; }
+#map-warning { position: fixed; bottom: 8px; left: 8px; z-index: 1100; background: #fff7dc; border: 1px solid #d6a344; border-radius: 8px; padding: 8px 12px; max-width: min(520px, 90vw); font-size: 12px; }
+.leaflet-control-attribution { font-size: 10px; }
+@media (max-width: 900px) {
+  main { grid-template-columns: minmax(0, 1fr) 300px; }
+  header, #toolbar { padding-left: 12px; padding-right: 12px; }
+}
+@media (max-width: 690px) {
+  .heading-row { display: block; }
+  .city-links { justify-content: start; margin-top: 9px; }
+  h1 { font-size: 20px; }
+  .mode-legend { flex-basis: 100%; margin-left: 0; }
+  main { display: flex; flex-direction: column; height: auto; }
+  #map { height: 57dvh; min-height: 360px; flex: none; }
+  #details { border-left: 0; overflow: visible; }
+}
+@media print {
+  header, #toolbar { break-after: avoid; }
+  .city-links, .route-actions, .leaflet-control-zoom { display: none; }
+  main { display: block; height: auto; }
+  #map { height: 580px; }
+  #details { overflow: visible; }
+  .route-card, .day-heading, .summary { break-inside: avoid; }
+}
